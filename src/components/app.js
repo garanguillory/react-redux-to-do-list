@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import List from './to_do_list.js';
+import AddToDo from './component.add_to_do';
+import List from './component.to_do_list.js';
 
 export default class App extends Component {
 
@@ -7,6 +8,7 @@ export default class App extends Component {
 
     return (
     	<div>
+    		<AddToDo />
 	      <List />
       </div>
     );
