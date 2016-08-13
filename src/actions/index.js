@@ -1,31 +1,12 @@
-export const ADD_TODO = "ADD_TODO";
-export const SET_VISIBILITY_FILTER = "SET_VISIBILITY_FILTER";
-export const TOGGLE_TODO = "TOGGLE_TODO";
+// export const ADD_TASK = 'ADD_TASK';
+// id, description, completed
 
-let nextTask = 0
+let nextTaskId = 0;
+export function addTask(task){
+	return {
+	  type: 'ADD_TASK',
+	  id: nextTaskId++,
+	  task
+	};
+}
 
-//1. Takes the text from AddTodo field and returns proper “Action” JSON to send to other components.
-export const addTodo = (text) => {
- return {
- type: ADD_TODO,
- id: nextTask++,
- text,  //<--ES6. same as text:text, in ES5
- completed: false //<-- initially this is set to false
- }
-}
- 
-//2. Takes filter string and returns proper “Action” JSON object to send to other components.
-export const setVisibilityFilter = (filter) => {
- return {
- type: SET_VISIBILITY_FILTER,
- filter
- }
-}
- 
-//3. Takes Todo item’s id and returns proper “Action” JSON object to send to other components.
-export const toggleTodo = (id) => {
- return {
- type: TOGGLE_TODO,
- id
- }
-}

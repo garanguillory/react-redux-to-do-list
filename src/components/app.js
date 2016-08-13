@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
-import AddToDo from './component.add_to_do';
-import List from './component.to_do_list.js';
+
+import List from '../containers/list';
+import AddTaskForm from '../containers/add_task_form';
 
 export default class App extends Component {
-
   render() {
-
     return (
-    	<div>
-    		<AddToDo />
-	      <List />
+      <div>
+      	<AddTaskForm />
+      	<List />
       </div>
     );
   }
