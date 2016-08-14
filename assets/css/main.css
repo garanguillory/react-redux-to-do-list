@@ -1,2 +1,12 @@
 .add-task-form {
   margin: 1em auto; }
+
+.fa-times {
+  color: red; }
+  .fa-times:hover {
+    color: #cc0000; }
+
+.fa-check {
+  color: green; }
+  .fa-check:hover {
+    color: #00b300; }

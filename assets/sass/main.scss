@@ -5,3 +5,17 @@
 .task-list {
 	// margin: 1em auto;
 }
+
+.fa-times {
+	color: red;
+	&:hover{
+		color: darken(red, 10%);
+	}
+}
+
+.fa-check {
+	color: green;
+	&:hover{
+		color: lighten(green, 10%);
+	}
+}

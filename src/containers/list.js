@@ -3,6 +3,19 @@ import { connect } from 'react-redux';
 
 
 class List extends Component {
+  /*
+    constructor(props) {
+      super(props);
+
+      this.state = {task: ''};
+      this.onInputChange = this.onInputChange.bind(this);
+      this.onFormSubmit = this.onFormSubmit.bind(this);
+    }
+  */
+  // add an onClick event handler
+  // add completeTask && deleteTask actions
+
+
   renderList() {
     return this.props.tasks.map((task) => {
       return (
@@ -10,7 +23,18 @@ class List extends Component {
           key={task.id}
           className="list-group-item">
           {task.description}
-        	<i className="fa fa-check pull-right" aria-hidden="true"></i>
+          <i 
+            className="fa fa-times pull-right" 
+            aria-hidden="true"
+            // onClick={() => this.props.deleteTask(task)}
+            >
+          </i>
+        	<i 
+            className="fa fa-check pull-right" 
+            aria-hidden="true"
+            // onClick={() => this.props.completeTask(task)}
+            >
+          </i>
         </li>
       );
     });
