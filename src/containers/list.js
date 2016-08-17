@@ -1,20 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
+import { toggleTask } from '../actions/index';
+import { bindActionCreators } from 'redux';
 
 class List extends Component {
-  /*
-    constructor(props) {
-      super(props);
-
-      this.state = {task: ''};
-      this.onInputChange = this.onInputChange.bind(this);
-      this.onFormSubmit = this.onFormSubmit.bind(this);
-    }
-  */
-  // add an onClick event handler
-  // add completeTask && deleteTask actions
-
 
   renderList() {
     return this.props.tasks.map((task) => {
@@ -22,17 +11,18 @@ class List extends Component {
         <li
           key={task.id}
           className="list-group-item">
-          {task.description}
+          <span style={task.completed ? {textDecoration: 'line-through'} : {textDecoration: 'none'}}>{task.description}</span>
           <i 
             className="fa fa-times pull-right" 
             aria-hidden="true"
-            // onClick={() => this.props.deleteTask(task)}
+            // onClick={() => this.props.deleteTask(task.id)}
             >
           </i>
         	<i 
             className="fa fa-check pull-right" 
             aria-hidden="true"
-            // onClick={() => this.props.completeTask(task)}
+            // onClick={() => console.log(this.props)}
+            onClick={() => this.props.toggleTask(task.id)}
             >
           </i>
         </li>
@@ -59,7 +49,11 @@ function mapStateToProps(state){
 	}
 }
 
-export default connect(mapStateToProps)(List)
+function mapDispatchToProps(dispatch){
+  return bindActionCreators({toggleTask: toggleTask}, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(List)
 
 
 

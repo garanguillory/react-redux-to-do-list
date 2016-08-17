@@ -10,3 +10,6 @@
   color: green; }
   .fa-check:hover {
     color: #00b300; }
+
+.strike-through {
+  text-decoration: line-through; }
