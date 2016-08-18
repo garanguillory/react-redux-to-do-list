@@ -19,7 +19,7 @@ class AddTaskForm extends Component {
 
 	onFormSubmit(event){
 		event.preventDefault();
-		// add task to to-do list (List)
+		// add task to List
 		this.props.addTask(this.state.task);
 		this.setState({task: ''});
 	}

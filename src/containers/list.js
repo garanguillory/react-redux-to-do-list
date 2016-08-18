@@ -21,7 +21,6 @@ class List extends Component {
         	<i 
             className="fa fa-check pull-right" 
             aria-hidden="true"
-            // onClick={() => console.log(this.props)}
             onClick={() => this.props.toggleTask(task.id)}
             >
           </i>
@@ -32,7 +31,7 @@ class List extends Component {
 
   render() {
     return (
-      <ul style={this.props.tasks.length ? {display: 'inline-block'} : {display: 'none'}}className="list-group-item col-xs-12 task-list">
+      <ul style={this.props.tasks.length ? {display: 'inline-block'} : {display: 'none'}} className="col-xs-12 task-list">
         {this.renderList()}
       </ul>
     )
