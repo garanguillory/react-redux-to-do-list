@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { toggleTask } from '../actions/index';
+import { toggleTask, deleteTask } from '../actions/index';
 import { bindActionCreators } from 'redux';
 
 class List extends Component {
@@ -15,7 +15,7 @@ class List extends Component {
           <i 
             className="fa fa-times pull-right" 
             aria-hidden="true"
-            // onClick={() => this.props.deleteTask(task.id)}
+            onClick={() => this.props.deleteTask(task.id)}
             >
           </i>
         	<i 
@@ -32,7 +32,7 @@ class List extends Component {
 
   render() {
     return (
-      <ul className="list-group col-xs-12 task-list">
+      <ul style={this.props.tasks.length ? {display: 'inline-block'} : {display: 'none'}}className="list-group-item col-xs-12 task-list">
         {this.renderList()}
       </ul>
     )
@@ -50,7 +50,7 @@ function mapStateToProps(state){
 }
 
 function mapDispatchToProps(dispatch){
-  return bindActionCreators({toggleTask: toggleTask}, dispatch);
+  return bindActionCreators({toggleTask: toggleTask, deleteTask: deleteTask}, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(List)
