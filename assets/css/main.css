@@ -1,5 +1,6 @@
 .add-task-form {
-  margin: 1em auto; }
+  margin: 1em auto;
+  margin-top: 5em; }
 
 .fa-times {
   color: red; }
