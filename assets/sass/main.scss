@@ -7,6 +7,37 @@
 	// margin: 1em auto;
 }
 
+.task-individual {
+	position: relative;
+
+	&:hover{
+		background: darken(white, 2.5%);
+	}
+
+	.task-functions {
+		display: inline-block;
+		li {
+			display: inline-block;
+			margin-right: 1em;
+			&:last-child {
+				margin-right: 0em;
+			}
+		}
+	}
+
+	.task-date {
+		display: none;
+		font-size: 0.5em;
+		position: absolute;
+		top: 0em;
+		right: 0.25em;
+	}
+	&:hover .task-date {
+		display: inline-block;
+	}
+
+}
+
 .fa-times {
 	color: red;
 	&:hover{

@@ -2,6 +2,26 @@
   margin: 1em auto;
   margin-top: 5em; }
 
+.task-individual {
+  position: relative; }
+  .task-individual:hover {
+    background: #f9f9f9; }
+  .task-individual .task-functions {
+    display: inline-block; }
+    .task-individual .task-functions li {
+      display: inline-block;
+      margin-right: 1em; }
+      .task-individual .task-functions li:last-child {
+        margin-right: 0em; }
+  .task-individual .task-date {
+    display: none;
+    font-size: 0.5em;
+    position: absolute;
+    top: 0em;
+    right: 0.25em; }
+  .task-individual:hover .task-date {
+    display: inline-block; }
+
 .fa-times {
   color: red; }
   .fa-times:hover {

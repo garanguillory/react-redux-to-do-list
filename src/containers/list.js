@@ -10,20 +10,29 @@ class List extends Component {
       return (
         <li
           key={task.id}
-          className="list-group-item">
-          <span style={task.completed ? {textDecoration: 'line-through'} : {textDecoration: 'none'}}>{task.description}</span>
-          <i 
-            className="fa fa-times pull-right" 
-            aria-hidden="true"
-            onClick={() => this.props.deleteTask(task.id)}
-            >
-          </i>
-        	<i 
-            className="fa fa-check pull-right" 
-            aria-hidden="true"
-            onClick={() => this.props.toggleTask(task.id)}
-            >
-          </i>
+          className="list-group-item task-individual">
+          <span style={task.completed ? {textDecoration: 'line-through'} : {textDecoration: 'none'}}>
+            {task.description}
+          </span>
+          <span className="task-date">date added: {task.date}</span>
+          <ul className="task-functions pull-right">
+            <li>
+              <i 
+                className="fa fa-check" 
+                aria-hidden="true"
+                onClick={() => this.props.toggleTask(task.id)}
+                >
+              </i>
+            </li>
+            <li>
+              <i 
+                className="fa fa-times" 
+                aria-hidden="true"
+                onClick={() => this.props.deleteTask(task.id)}
+                >
+              </i>
+            </li>
+          </ul>
         </li>
       );
     });
@@ -54,5 +63,29 @@ function mapDispatchToProps(dispatch){
 
 export default connect(mapStateToProps, mapDispatchToProps)(List)
 
+/*
 
+  <ul className="task-functions pull-right">
+    <li>
+      <span className="task-date">date added: {task.date}</span>
+    </li>
+    <li>
+      <i 
+        className="fa fa-check" 
+        aria-hidden="true"
+        onClick={() => this.props.toggleTask(task.id)}
+        >
+      </i>
+    </li>
+    <li>
+      <i 
+        className="fa fa-times" 
+        aria-hidden="true"
+        onClick={() => this.props.deleteTask(task.id)}
+        >
+      </i>
+    </li>
+  </ul>
+
+*/
 

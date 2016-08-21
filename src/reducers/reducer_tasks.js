@@ -5,13 +5,27 @@ export const ADD_TASK = 'ADD_TASK';
 export const TOGGLE_TASK = 'TOGGLE_TASK';
 export const DELETE_TASK = 'DELETE_TASK';
 
+const monthNames = [
+  "January", "February", "March",
+  "April", "May", "June", "July",
+  "August", "September", "October",
+  "November", "December"
+];
+
+const date = new Date();
+const day = date.getDate();
+const monthIndex = date.getMonth();
+const year = date.getFullYear();
+const dateFormatted = `${monthNames[monthIndex]} ${day}, ${year}`;
+
 const task = (state = {}, action) => {
   switch (action.type) {
     case ADD_TASK:
       return {
         id: action.id,
         description: action.task,
-        completed: false
+        completed: false,
+        date: dateFormatted
       }
     case TOGGLE_TASK:
       if (state.id !== action.id) {
