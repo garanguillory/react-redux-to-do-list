@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { toggleTask, deleteTask } from '../actions/index';
+import { toggleTask, deleteTask, addSubTask } from '../actions/index';
 import { bindActionCreators } from 'redux';
 
 class List extends Component {
@@ -8,6 +8,7 @@ class List extends Component {
   renderList() {
     return this.props.tasks.map((task) => {
       return (
+        <div>
         <li
           key={task.id}
           className="list-group-item task-individual">
@@ -16,6 +17,14 @@ class List extends Component {
           </span>
           <span className="task-date">date added: {task.date}</span>
           <ul className="task-functions pull-right">
+            <li>
+              <i 
+                className="fa fa-plus" 
+                aria-hidden="true"
+                onClick={() => this.props.addSubTask(task.id)}
+                >
+              </i>
+            </li>
             <li>
               <i 
                 className="fa fa-check" 
@@ -34,6 +43,7 @@ class List extends Component {
             </li>
           </ul>
         </li>
+        </div>
       );
     });
   }
@@ -58,34 +68,8 @@ function mapStateToProps(state){
 }
 
 function mapDispatchToProps(dispatch){
-  return bindActionCreators({toggleTask: toggleTask, deleteTask: deleteTask}, dispatch);
+  return bindActionCreators({toggleTask: toggleTask, deleteTask: deleteTask, addSubTask: addSubTask}, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(List)
-
-/*
-
-  <ul className="task-functions pull-right">
-    <li>
-      <span className="task-date">date added: {task.date}</span>
-    </li>
-    <li>
-      <i 
-        className="fa fa-check" 
-        aria-hidden="true"
-        onClick={() => this.props.toggleTask(task.id)}
-        >
-      </i>
-    </li>
-    <li>
-      <i 
-        className="fa fa-times" 
-        aria-hidden="true"
-        onClick={() => this.props.deleteTask(task.id)}
-        >
-      </i>
-    </li>
-  </ul>
-
-*/
 

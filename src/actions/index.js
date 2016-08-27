@@ -1,9 +1,11 @@
 export const ADD_TASK = 'ADD_TASK';
 export const TOGGLE_TASK = 'TOGGLE_TASK';
 export const DELETE_TASK = 'DELETE_TASK';
+export const ADD_SUBTASK = 'ADD_SUBTASK';
+
 
 let nextTaskId = 0;
-export function addTask(task){
+export const addTask = (task) => {
 	return {
 	  type: ADD_TASK,
 	  id: nextTaskId++,
@@ -25,4 +27,11 @@ export const deleteTask = (id) => {
   }
 }
 
-
+let nextsubTaskId = 0;
+export const addSubTask = (subtaskId, subtask) => {
+  return {
+    type: ADD_SUBTASK,
+    subtask,
+    subtaskId
+  }
+}
