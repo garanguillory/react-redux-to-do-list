@@ -32,5 +32,17 @@
   .fa-check:hover {
     color: #00b300; }
 
+.filter-task ul {
+  margin: 0 auto;
+  padding-left: 0;
+  text-align: center; }
+
+.filter-task li {
+  display: inline-block;
+  text-decoration: none;
+  margin-right: 1em; }
+  .filter-task li:last-child {
+    margin-right: 0; }
+
 .strike-through {
   text-decoration: line-through; }

@@ -29,12 +29,12 @@ class AddTaskForm extends Component {
 			  	<div className="add-task-form">
 			  		<form onSubmit={this.onFormSubmit} className="input-group">
 			  			<input 
-			  				placeholder="Add task here..."
+			  				placeholder="add task here..."
 			  				className="form-control"
 			  				value={this.state.task}
 			  				onChange={this.onInputChange} />
 			  			<span className="input-group-btn">
-			  				<button type="submit" className="btn btn-secondary">Add</button>
+			  				<button type="submit" className="btn btn-secondary">ADD</button>
 			  			</span>
 			  		</form>
 			    </div>

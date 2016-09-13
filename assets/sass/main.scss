@@ -52,6 +52,24 @@
 	}
 }
 
+.filter-task {
+	ul {
+		margin: 0 auto;
+		padding-left: 0;
+		text-align: center;
+	}
+
+	li {
+		display: inline-block;
+		text-decoration: none;
+		margin-right: 1em;
+
+		&:last-child{
+			margin-right: 0;
+		}
+	}
+}
+
 .strike-through {
 	text-decoration: line-through;
 }
